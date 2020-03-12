@@ -1,0 +1,10 @@
+---
+- name: Test sudo
+  hosts: all
+  become: yes
+   
+  tasks:
+  - name: Run whoami
+    command: whoami
+    register: result
+  - debug: msg=" {{ result.stdout }}"
