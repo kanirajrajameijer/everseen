@@ -4,7 +4,7 @@
   become: yes
    
   tasks:
-  - name: Run whoami
-    command: whoami
+  - name: Run Docker Command
+    command: docker ps -a
     register: result
   - debug: msg=" {{ result.stdout }}"
