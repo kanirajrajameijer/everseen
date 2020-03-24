@@ -1,0 +1,13 @@
+---
+- name: Test sudo
+  hosts: all
+  become: yes
+   
+  tasks:
+  - name: Run Docker Command
+    command: docker ps -a
+    register: result
+  - debug: msg=" {{ result.stdout }}"
+  
+  
+  
